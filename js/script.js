@@ -69,25 +69,23 @@ function save (){
 
 
 function addNewRow(aluno){
-    var table = document.getElementById("tableAlunos");
+    var table = document.getElementById("tableAlunos").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow();
 
-    var idNode = document.createTextNode(aluno.id);
-    newRow.insertCell().appendChild(idNode);
+    newRow.insertCell().appendChild(document.createTextNode(aluno.id));
+    newRow.insertCell().appendChild(document.createTextNode(aluno.nome));
+    newRow.insertCell().appendChild(document.createTextNode(aluno.email));
 
-    var nomeNode = document.createTextNode(aluno.nome);
-    newRow.insertCell().appendChild(nomeNode);
+    var cellTelefone = newRow.insertCell();
+    cellTelefone.appendChild(document.createTextNode(aluno.telefone));
 
-    var emailNode = document.createTextNode(aluno.email);
-    newRow.insertCell().appendChild(emailNode);
+    var cellCurso = newRow.insertCell();
+    cellCurso.className = "d-none d-md-table-cell";
+    var nomeCurso = cursos[aluno.curso - 1] ? cursos[aluno.curso - 1].nome : "N/A";
+    cellCurso.appendChild(document.createTextNode(nomeCurso));
 
-    var telefoneNode = document.createTextNode(aluno.telefone);
-    newRow.insertCell().appendChild(telefoneNode);
-    
-    var cursoNode = document.createTextNode(cursos[aluno.curso - 1].nome);
-    newRow.insertCell().appendChild(cursoNode);
-
-    var turnoNode = document.createTextNode(aluno.turno);
-    newRow.insertCell().appendChild(turnoNode);
+    var cellTurno = newRow.insertCell();
+    cellTurno.className = "d-none d-md-table-cell";
+    cellTurno.appendChild(document.createTextNode(aluno.turno));
 
 }

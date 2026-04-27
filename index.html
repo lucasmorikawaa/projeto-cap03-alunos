@@ -20,7 +20,7 @@
                 Formulário de Cadastro:
             </div>
             <div class="col-md-10 offset-md-1">
-                <form onsubmit="save()"; return false; id="formAlunos">
+                <form onsubmit="save(); return false;" id="formAlunos">
                     <div class="row g-3 mt-3">
                         <label for="inputNome" class="col-2 form-label">Nome: </label>
                         <div class="col-10">
@@ -94,14 +94,12 @@
                         <th scope="col">Nome</th>
                         <th scope="col">Email</th>
                         <th scope="col">Telefone</th>
-                        <th scope="col">Curso</th>
-                        <th scope="col">Turno</th>
+                        <th scope="col" class="d-none d-md-table-cell">Curso</th>
+                        <th scope="col" class="d-none d-md-table-cell">Turno</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        
-                    </tr>
+                    
                 </tbody>
             </table>
         </section>
